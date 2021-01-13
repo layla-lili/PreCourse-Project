@@ -69,7 +69,7 @@ return count;
  */
 function differences(numbers) {
   const diff = [];
-  for(let i=0; i<numbers.length-1; i++){
+  for(let i=1; i<numbers.length; i++){
     diff.push(numbers[i] - numbers[i-1]);
   }
   return diff;
@@ -113,7 +113,7 @@ function largestIncrement(numbers) {
  * afterX([11, 35, 52, 14, 56, 601, 777, 888, 999], 52) -> [14, 56, 601, 777, 888, 999]
  */
 function afterX(numbers, x) {
-  let index=numbers.findIndex((element) => element === x);
+  const index=numbers.findIndex((element) => element === x);
   const arrAfterX= numbers.slice(index+1);
   return arrAfterX;
 }
@@ -132,7 +132,7 @@ function afterX(numbers, x) {
  * Hint: Use string method .toUpperCase()
  */
 function abbreviate(firstName, lastName) {
-  return `${firstName[0]}${lastName}`.toUpperCase()
+  return `${firstName[0]}${lastName[0]}`.toUpperCase();
 }
 
 // console.log(abbreviate("miss", "Stephane"));
@@ -148,7 +148,7 @@ function abbreviate(firstName, lastName) {
  *
  */
 function isUpperCase(string) {
-  return string === string.UpperCase();
+  return string === string.toUpperCase();
 }
 
 // console.log(isUpperCase("JCREW"));
@@ -164,7 +164,7 @@ function isUpperCase(string) {
  *
  */
 function elementInArray(numbers, x) {
- return numbers.include(x);
+ return numbers.includes(x);
 }
 
 // console.log(elementInArray([5, 6, 7], 8));
