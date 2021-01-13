@@ -26,7 +26,7 @@ function sumOdds(numbers) {
   });
   return sum;
 }
-console.log(sumOdds([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+//console.log(sumOdds([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
 // console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
