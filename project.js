@@ -20,7 +20,13 @@
  */
 function sumOdds(numbers) {
   // Your code here
+    let sum=0;
+  numbers.forEach((number) => {
+  if (number%2 === 1) sum+=number;
+  });
+  return sum;
 }
+console.log(sumOdds([1, 2, 3, 4, 5, 6, 7, 8, 9]));
 
 // console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
 
@@ -37,7 +43,11 @@ function sumOdds(numbers) {
  * Hint: Use string methods to make it case-insensitive
  */
 function characterCount(string, c) {
-  // Your code here
+  let count =0;
+for(const character of string){
+  if (character.toLowerCase() === c) count++;
+}
+return count;
 }
 
 // console.log(characterCount("Character Count is clever", "c"));
@@ -58,7 +68,11 @@ function characterCount(string, c) {
  * differences([11, 35, 52, 14, 56]) -> [24,  17, -38,  42]
  */
 function differences(numbers) {
-  // Your code here
+  const diff = [];
+  for(let i=0; i<numbers.length-1; i++){
+    diff.push(numbers[i] - numbers[i-1]);
+  }
+  return diff;
 }
 
 // console.log(differences([11, 35, 52, 14, 56]));
@@ -79,8 +93,10 @@ function differences(numbers) {
  *
  * largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> 545
  */
+//math.max 
 function largestIncrement(numbers) {
-  // Your code here
+  return Math.max(...differences(numbers));
+
 }
 
 // console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
@@ -97,7 +113,9 @@ function largestIncrement(numbers) {
  * afterX([11, 35, 52, 14, 56, 601, 777, 888, 999], 52) -> [14, 56, 601, 777, 888, 999]
  */
 function afterX(numbers, x) {
-  // Your code here
+  let index=numbers.findIndex((element) => element === x);
+  const arrAfterX= numbers.slice(index+1);
+  return arrAfterX;
 }
 
 // console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
@@ -114,7 +132,7 @@ function afterX(numbers, x) {
  * Hint: Use string method .toUpperCase()
  */
 function abbreviate(firstName, lastName) {
-  // Your code here
+  return `${firstName[0]}${lastName}`.toUpperCase()
 }
 
 // console.log(abbreviate("miss", "Stephane"));
@@ -130,7 +148,7 @@ function abbreviate(firstName, lastName) {
  *
  */
 function isUpperCase(string) {
-  // Your code here
+  return string === string.UpperCase();
 }
 
 // console.log(isUpperCase("JCREW"));
@@ -146,7 +164,7 @@ function isUpperCase(string) {
  *
  */
 function elementInArray(numbers, x) {
-  // Your code here
+ return numbers.include(x);
 }
 
 // console.log(elementInArray([5, 6, 7], 8));
@@ -162,7 +180,7 @@ function elementInArray(numbers, x) {
  *
  */
 function reverseString(string) {
-  // Your code here
+  return string.split("").reverse().join("");
 }
 
 // console.log(reverseString("CODED"));
